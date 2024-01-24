@@ -1,0 +1,33 @@
+## Training config
+
+save_interval: 1
+val_interval: 10000
+display_interval: 100
+
+batch_size: 100
+val_batch_size: 100
+root: "/mnt/sdd/ilsvrc2012"
+train_fn: 'train.txt'
+val_fn: 'val.txt'
+# loading_weigts: False
+cnn_model_fn_pretrain: '/mnt/sdc/AD_matthew/checkpoint/ckpt_20.pt'
+is_pretrain_imtrs: False
+checkpoint_dir: 'checkpoint'
+
+
+loading_imagenet_pretrained: True
+epoch: 50
+
+## Training optimizer
+learning_rate: 0.0000625
+step: 10
+
+### Validation/test config
+
+val_SNR: 35
+val_epoch: 15
+val_eopch_inner: 1
+val_batch_size_train: 320
+cnn_model_fn: 'final_siftresnet50.pt'
+LOG_FN: 'robustcnn.txt'
+
